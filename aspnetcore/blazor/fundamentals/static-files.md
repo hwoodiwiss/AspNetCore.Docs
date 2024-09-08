@@ -52,6 +52,9 @@ Configure Map Static Assets Middleware by calling `MapStaticAssets` in the app's
   * Integrity information is removed from the assets to avoid issues when a file is changed while the app is running.
   * Static assets aren't cached to ensure that the browser always retrieves current content.
 
+> [!WARNING]
+> <xref:Microsoft.AspNetCore.Builder.ComponentsWebAssemblyApplicationBuilderExtensions.UseBlazorFrameworkFiles%2A> and `MapStaticAssets` do not work together, and will cause the blazor framework assets to fail to be served with an error status code.
+
 When [Interactive WebAssembly or Interactive Auto render modes](xref:blazor/fundamentals/index#render-modes) are enabled:
 
 * Blazor creates an endpoint to expose the resource collection as a JS module.
